@@ -1,8 +1,12 @@
 'use strict';
 
+import Score from "./Score.js";
+
 document.getElementById("buttonstart").addEventListener("click", startgame)
+let userName ="";
 
 function startgame() {
+    userName=prompt("Type your Name");
     document.getElementById("inputypeword").disabled=false;
     document.getElementById("inputypeword").focus();
     document.getElementById("inputypeword").value="";
@@ -32,7 +36,12 @@ function decrementTimer() {
 function stoptimer() {
     clearInterval(timer); //stop timer
     document.getElementById("inputypeword").disabled=true;
+    let newDategame = new Date().toString().substring(0,15);
+   
+    let puntaje = new Score(newDategame, score, userName);
+    console.log(puntaje);
 } 
+
 
 const keys = [ 'dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',
 'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute',
@@ -52,35 +61,25 @@ const keys = [ 'dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building',
 function randomizewords() {
     let originalLen = keys.length;
 
-    const obj = {};
-
     for (let i = 0; i < originalLen; i++) {
       let k = Math.floor(Math.random() * keys.length);
-      //console.log(k + " Palabras Aletorias: " + keys[k]);
       document.getElementById("showWords").innerHTML = keys[k];
     }
-    console.log(obj);
 }
 
 // listen gamer type and compare Words
-
 document.getElementById("inputypeword").addEventListener("keyup",comparewords);
 
 let score = 0;
 
 function comparewords(){
     let currentword = document.getElementById("showWords").textContent.toUpperCase();
-    console.log(currentword);
     let typegamer = document.getElementById("inputypeword").value.toUpperCase();
-    console.log(" type Gamer " + typegamer);
     if (currentword == typegamer ) {
-        console.log(" Palabra Igual ");
         score++;
         document.getElementById("pointscore").innerHTML=score;
         randomizewords();
         document.getElementById("inputypeword").value="";
-    } else{
-        console.log(" Sigue Intentando ");
-    }
+    } 
 }
 
