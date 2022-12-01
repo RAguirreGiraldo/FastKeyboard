@@ -11,17 +11,50 @@
     --app-light-bg: #ffffff;
 }
 
-/*
-body {
-  background: var(--app-blue);
-}*/
 
 .container {
   width: min(100% - 30px, 1080px);
   margin-inline: auto;
-  display: grid;
+  display: flex;
   place-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.blackboard {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.score, .typeword, .inputypeword, .timer {
+  text-align: center;
+}
+
+
+
+
+/*
+
+{
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+ 
+}
+
+
+
+
+
+body {
+  background: var(--app-blue);
+
+
 
 h1, h2, h3, a, p {
   color: var(--app-light-bg);
@@ -72,9 +105,6 @@ h1, h2, h3, a, p {
   text-align: center;
 }
 
-/**************/   
-/*     Grid   */
-/*************/
 
 .grid-container {
     display: grid;
@@ -112,3 +142,4 @@ input:focus {
     border: 1px solid rgba(255, 255, 255, .25);
 }
 
+*/

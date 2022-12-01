@@ -15,33 +15,31 @@
         referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="assets/style/index.css" media="all"/>  
         <script src="assets/script/index.js" type="module"></script>
-        <title>Fast Keyboard</title>
+        <title>Ninja Keyboard</title>
     </head>
         <main>
             <body>
                 <div class="container">
-                    <div class="title"><h1>FastKeyboard</h1></div>
-                        <div class="showwords">
-                            <div><p>Muestralas palabra aleatoria </p></div>
-                        </div>
-                        <div class="blackboard">
-                            <div class="score">
-                                <div class="titlecore">Score</div>
-                                <div class="Pointinscore">35</div>
+                    <div class="grid-container">
+                        <div class="select-container">
+                            <h1 class="title">FastKeyboard</h1>
+                            <div class="form">
+                                <form class="flexbox">
+                                    <p class = "countdown"></p>
+                                    <input id="hourwakeup" type="text" 
+                                    name="hourwakeup" class="text-one" placeholder="90 Seg"/>
+                                    <input id="hourwakeup" type="text" 
+                                    name="hourwakeup" class="text-two" placeholder="Discipline"/>
+                                </form>
+
+                                <button>Star Game</button>
+
                             </div>
-                            <div class="typeword">
-                                <input class="inputypeword" type="text" placeholder="Type your word">
-                            </div>
-                            <div class="timer">
-                                <div class="titletimer">Timer</div>
-                                <div class="Timeremainder">62</div>
-                            </div>
-                        </div>
-                        <div class="button">
-                            <div class="buttonplay">
-                                <button>Start Game</button>
-                            </div>                            
-                        </div>                 
+                            <div class="grid-item1"> </div>
+                            <div class="grid-item2"> </div>
+                            <canvas id="canvas"></canvas>
+                        </div>        
+                    </div>
                 </div>
             </body>
         </main>

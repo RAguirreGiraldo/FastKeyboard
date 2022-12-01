@@ -1,75 +1,43 @@
 'use strict';
 
+/* 
+Funcion 
 
 
 
 
+*/
 
 
+const keys = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',
+'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute',
+'discipline', 'machine', 'accurate', 'connection', 'rainbow', 'bicycle',
+'eclipse', 'calculator', 'trouble', 'watermelon', 'developer', 'philosophy',
+'database', 'periodic', 'capitalism', 'abominable', 'component', 'future',
+'pasta', 'microwave', 'jungle', 'wallet', 'canada', 'coffee', 'beauty', 'agency',
+'chocolate', 'eleven', 'technology', 'alphabet', 'knowledge', 'magician',
+'professor', 'triangle', 'earthquake', 'baseball', 'beyond', 'evolution',
+'banana', 'perfumer', 'computer', 'management', 'discovery', 'ambition', 'music',
+'eagle', 'crown', 'chess', 'laptop', 'bedroom', 'delivery', 'enemy', 'button',
+'superman', 'library', 'unboxing', 'bookstore', 'language', 'homework',
+'fantastic', 'economy', 'interview', 'awesome', 'challenge', 'science', 'mystery',
+'famous', 'league', 'memory', 'leather', 'planet', 'software', 'update', 'yellow',
+'keyboard', 'window'];
 
+let originalLen = keys.length
 
+const obj = {};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document get by id va a escuchar al submit-btn con evento click y va llamar la funcion setAlarm
-//
-document.getElementById('submit-btn').addEventListener("click", setAlarm);
-
-function setAlarm() {
-    let data = document.getElementById('hourwakeup').value;
-    document.getElementById('setalarm').innerHTML = "Your word was " + data;
-        
-    if(!data) {
-        output.innerText = 'Please input Valid Hour.';
-        return;
-    }       
+for(let i = 0; i < originalLen; i++){
+  let k = Math.floor(Math.random() * keys.length); 
+  
+  // let v = Math.floor(Math.random() * values.length);
+  
+  obj[keys[k]] = values[v];
+  keys.splice(k,1);
+  values.splice(k,1);
+  
 }
 
-
-
-
-
-/*    
-
-    onEvent('click', btnConvert, function() {
-    output.innerText = '';
-    
-
-
-    if(!initialNumber) {
-        output.innerText = 'Please input Valid Hour.';
-        return;
-    }
-
-    let selectedinput = select("input[name='convert']:checked");
-    if(!selectedinput)  {
-        output.innerText = 'Please Enter a Valid Hour';
-        return;
-    }
-
-    let result;
-    if(selectedinput.value !== true)  {
-            
-    }   
-    
-    
-    });
-    
-    */
-
-
-
-
-
+console.clear();
+console.log(obj);

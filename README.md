@@ -1,8 +1,8 @@
-## My New Contact
+## My New Fast Typing Game
 
 ### Example in Web Page  
 
-If you want to check nice Social Networks
+If you want play amaizing games
 
 [Game FastKeyboard](https://raguirregiraldo.github.io/FastKeyboard/)
 

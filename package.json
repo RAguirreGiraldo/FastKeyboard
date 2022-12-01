@@ -1,0 +1,24 @@
+{
+  "name": "finalproject_5",
+  "version": "1.0.0",
+  "description": "If you want play amaizing games",
+  "main": "index.js",
+  "dev": "lite-server",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAguirreGiraldo/FastKeyboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RAguirreGiraldo/FastKeyboard/issues"
+  },
+  "homepage": "https://github.com/RAguirreGiraldo/FastKeyboard#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
