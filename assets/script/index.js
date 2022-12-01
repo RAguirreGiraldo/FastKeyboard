@@ -7,31 +7,22 @@ function sumarscore() {
 
 }
 
-let segundos = 60;
-function decrementandorcontador() {
-    document.getElementById("Timeremainder").innerHTML = segundos + "Segundos";
-    if (segundos == 0) {
-        alert('Se termino el tiempo');
-    } else {
-        segundos--;
-        setTimeout('ActualizarTiempo()', 1000);
-    }
-}
 
 // codigo de funcion decrementar tiempo
-let seconds = 60;
-let timer = setInterval(function () {
-    console.log("1 Segundo");
-    seconds--;
-    if (seconds == 0) {
-        stoptimer();
-    }
-    console.log("faltan " + seconds);
-}, 1000);
 
-function stoptimer() {
-    clearInterval(timer);
-}
+let seconds = 99;
+      let timer = setInterval(function () {
+        seconds--;
+        if (seconds == 0) {
+          stoptimer();
+        }
+        document.getElementById("timeremainder").innerHTML=seconds;
+      }, 1000);
+
+      function stoptimer() {
+        clearInterval(timer);
+      }
+
 
 
 
@@ -61,43 +52,136 @@ function startgame() {
 
 
 
-
-
-
 /* constante palabras */ /*
 
-const keys = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',
-    'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute',
-    'discipline', 'machine', 'accurate', 'connection', 'rainbow', 'bicycle',
-    'eclipse', 'calculator', 'trouble', 'watermelon', 'developer', 'philosophy',
-    'database', 'periodic', 'capitalism', 'abominable', 'component', 'future',
-    'pasta', 'microwave', 'jungle', 'wallet', 'canada', 'coffee', 'beauty', 'agency',
-    'chocolate', 'eleven', 'technology', 'alphabet', 'knowledge', 'magician',
-    'professor', 'triangle', 'earthquake', 'baseball', 'beyond', 'evolution',
-    'banana', 'perfumer', 'computer', 'management', 'discovery', 'ambition', 'music',
-    'eagle', 'crown', 'chess', 'laptop', 'bedroom', 'delivery', 'enemy', 'button',
-    'superman', 'library', 'unboxing', 'bookstore', 'language', 'homework',
-    'fantastic', 'economy', 'interview', 'awesome', 'challenge', 'science', 'mystery',
-    'famous', 'league', 'memory', 'leather', 'planet', 'software', 'update', 'yellow',
-    'keyboard', 'window'];
+const keys = [
+        "dinosaur",
+        "love",
+        "pineapple",
+        "calendar",
+        "robot",
+        "building",
+        "population",
+        "weather",
+        "bottle",
+        "history",
+        "dream",
+        "character",
+        "money",
+        "absolute",
+        "discipline",
+        "machine",
+        "accurate",
+        "connection",
+        "rainbow",
+        "bicycle",
+        "eclipse",
+        "calculator",
+        "trouble",
+        "watermelon",
+        "developer",
+        "philosophy",
+        "database",
+        "periodic",
+        "capitalism",
+        "abominable",
+        "component",
+        "future",
+        "pasta",
+        "microwave",
+        "jungle",
+        "wallet",
+        "canada",
+        "coffee",
+        "beauty",
+        "agency",
+        "chocolate",
+        "eleven",
+        "technology",
+        "alphabet",
+        "knowledge",
+        "magician",
+        "professor",
+        "triangle",
+        "earthquake",
+        "baseball",
+        "beyond",
+        "evolution",
+        "banana",
+        "perfumer",
+        "computer",
+        "management",
+        "discovery",
+        "ambition",
+        "music",
+        "eagle",
+        "crown",
+        "chess",
+        "laptop",
+        "bedroom",
+        "delivery",
+        "enemy",
+        "button",
+        "superman",
+        "library",
+        "unboxing",
+        "bookstore",
+        "language",
+        "homework",
+        "fantastic",
+        "economy",
+        "interview",
+        "awesome",
+        "challenge",
+        "science",
+        "mystery",
+        "famous",
+        "league",
+        "memory",
+        "leather",
+        "planet",
+        "software",
+        "update",
+        "yellow",
+        "keyboard",
+        "window",
+      ];
 
-// funcion randomica */
-/*
+    document.getElementById("inputypeword").addEventListener("keyup",comparewords);
+    
+    let score = 0;
 
-let originalLen = keys.length;
+    function comparewords(){
+        let currentword = document.getElementById("showWords").textContent.toUpperCase();
+        console.log(currentword);
+        let typegamer = document.getElementById("inputypeword").value.toUpperCase();
+        console.log(" type Gamer " + typegamer);
+        if (currentword == typegamer ) {
+            console.log(" Palabra Igual ");
+            score++;
+            document.getElementById("pointscore").innerHTML=score;
+            randomizewords();
+            document.getElementById("inputypeword").value="";
+        } else{
+            console.log(" Sigue Intentando ");
+        }
+    }
 
-      const obj = {};
 
-      for (let i = 0; i < originalLen; i++) {
-        let k = Math.floor(Math.random() * keys.length);
-        console.log(k + " Palabras Aletorias: " + keys[k]);
-        document.getElementById("showWords").innerHTML=keys[k];
+      function randomizewords() {
+        let originalLen = keys.length;
+
+        const obj = {};
+
+        for (let i = 0; i < originalLen; i++) {
+          let k = Math.floor(Math.random() * keys.length);
+          //console.log(k + " Palabras Aletorias: " + keys[k]);
+          document.getElementById("showWords").innerHTML = keys[k];
+        }
+        console.log(obj);
       }
-      console.log(obj);
 
-
-
-
+      randomizewords();
 
 
 */
