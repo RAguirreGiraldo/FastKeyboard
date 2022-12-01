@@ -58,6 +58,10 @@ h1 {
 }
 
 .show-words, .showUserword{
+  height: 100px;
+  width: 620px;
+  font-size: 55px;
+  text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-color: #1a1d28;
   padding: 10px;
