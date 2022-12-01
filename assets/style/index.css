@@ -64,16 +64,12 @@ h1 {
 input[type="text"] {
   height: 48px;
   padding: 15px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+  color:#ffffff;
+  background-color: rgba(9, 2, 2, 0.1);
   font-size: 17px;
   font-weight: 400;
   text-align: left;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-color: #1a1d28;
-  margin: 15px;
+    margin: 15px;
 }
 
 .blackboard {
@@ -93,6 +89,7 @@ input[type="text"] {
   border-color: var(--app-light-bg);
   margin: 15px;
   background-color: #000;
+  border-radius: 10px;
 }
 
 button {
