@@ -37,11 +37,15 @@ function stoptimer() {
     clearInterval(timer); //stop timer
     document.getElementById("inputypeword").disabled=true;
     let newDategame = new Date().toString().substring(0,15);
-   
     let puntaje = new Score(newDategame, score, userName);
-    console.log(puntaje);
+    let scoreRow = document.getElementById("tmprow");
+    let cloneRow = scoreRow.cloneNode(true);
+    cloneRow.removeAttribute("hidden");
+    document.getElementById("row").prepend(cloneRow);
+    document.getElementById("tdate").innerHTML=puntaje.date;
+    document.getElementById("tname").innerHTML=puntaje.person;
+    document.getElementById("thits").innerHTML=puntaje.hits; 
 } 
-
 
 const keys = [ 'dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',
 'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute',
