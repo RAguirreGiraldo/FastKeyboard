@@ -9,6 +9,8 @@
     --app-blue:#3c57ff;
     --app-blue-hover:#364ee6;
     --app-light-bg: #ffffff;
+    --app-yellow:#ffff1a;
+    
 }
 
 
@@ -22,6 +24,34 @@
   align-content: center;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--app-red);
+}
+
+
+h1 {
+  font-family: 'Megrim', cursive;
+  font-size: 40px;
+  font-style: italic;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  margin-right: 5px;
+  color: var(--app-light-bg);
+  text-shadow: -2px -2px 1px #000;
+}
+
+.showtitle{
+  font-family: 'Megrim', cursive;
+  color: var(--app-light-bg);
+  font-size: 35px;
+  text-shadow: -2px -2px 1px #000;
+}
+
+.shownumber{
+  font-family: 'Megrim', cursive;
+  color: var(--app-yellow);
+  font-size: 35px;
+  text-shadow: -2px -2px 1px #000;
 }
 
 .show-words{
@@ -59,9 +89,10 @@ input[type="text"] {
 
 .score, .typeword, .inputypeword, .timer {
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-color: #1a1d28;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-color: var(--app-light-bg);
   margin: 15px;
+  background-color: #000;
 }
 
 button {
