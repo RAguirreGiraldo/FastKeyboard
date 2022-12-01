@@ -4,13 +4,16 @@ import Score from "./Score.js";
 
 document.getElementById("buttonstart").addEventListener("click", startgame)
 let userName ="";
+let media=document.getElementById("music");
+
 
 function startgame() {
+    media.play();
     userName=prompt("Type your Name");
     document.getElementById("inputypeword").disabled=false;
     document.getElementById("inputypeword").focus();
     document.getElementById("inputypeword").value="";
-    seconds = 10;
+    seconds = 15;
     score = 0;
     document.getElementById("pointscore").innerHTML=score;    
     document.getElementById("timeremainder").innerHTML = seconds;
@@ -20,7 +23,7 @@ function startgame() {
 
 // logical to decrement time
 
-let seconds = 10;
+let seconds = 15;
 let timer = '';
 
 function decrementTimer() {
@@ -44,7 +47,9 @@ function stoptimer() {
     document.getElementById("row").prepend(cloneRow);
     document.getElementById("tdate").innerHTML=puntaje.date;
     document.getElementById("tname").innerHTML=puntaje.person;
-    document.getElementById("thits").innerHTML=puntaje.hits; 
+    document.getElementById("thits").innerHTML=puntaje.hits;
+    document.getElementById("percent").innerHTML=((puntaje.hits/keys.length)*100).toString().substring(0,3) + " % "; 
+    media.pause();
 } 
 
 const keys = [ 'dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',

@@ -30,10 +30,13 @@
   </head>
   <main>
     <body>
+      <audio id="music">
+        <source src="./assets/media/backaudio.mp3">
+      </audio>  
       <div class="container">
         <div class="title"><h1>FastKeyboard</h1></div>
         <div class="show-words">
-          <div><p id="showWords">Muestralas palabra aleatoria</p></div>
+          <div><p id="showWords">Play me Random Words</p></div>
         </div>
         <div class="blackboard">
           <div class="score">
@@ -65,12 +68,14 @@
                     <th>Date</th>
                     <th>Name</th>
                     <th>Hits</th>
+                    <th>Percentaje</th>
                 </thead>
                 <tbody id="row">
                     <tr id="tmprow" hidden>
                         <td><p id="tdate"></p></td>
                         <td><p id="tname"></p></td>
                         <td><p id="thits"></p></td>
+                        <td><p id="percent"></p></td>
                     </tr>
                 </tbody>
             </table>
