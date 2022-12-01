@@ -6,14 +6,14 @@ document.getElementById("buttonstart").addEventListener("click", startgame)
 let userName ="";
 let media=document.getElementById("music");
 
-
 function startgame() {
     media.play();
     userName=prompt("Type your Name");
+    media.play();
     document.getElementById("inputypeword").disabled=false;
     document.getElementById("inputypeword").focus();
     document.getElementById("inputypeword").value="";
-    seconds = 15;
+    seconds = 99;
     score = 0;
     document.getElementById("pointscore").innerHTML=score;    
     document.getElementById("timeremainder").innerHTML = seconds;
@@ -23,7 +23,7 @@ function startgame() {
 
 // logical to decrement time
 
-let seconds = 15;
+let seconds = 99;
 let timer = '';
 
 function decrementTimer() {
@@ -43,6 +43,7 @@ function stoptimer() {
     let puntaje = new Score(newDategame, score, userName);
     let scoreRow = document.getElementById("tmprow");
     let cloneRow = scoreRow.cloneNode(true);
+    document.getElementById("inputypeword").value="";
     cloneRow.removeAttribute("hidden");
     document.getElementById("row").prepend(cloneRow);
     document.getElementById("tdate").innerHTML=puntaje.date;

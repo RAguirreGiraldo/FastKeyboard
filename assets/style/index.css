@@ -24,7 +24,9 @@
   align-content: center;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--app-red);
+  background-image: radial-gradient(circle at 50% -20.71%, #ff7600 0, #ff6104 16.67%, 
+  #ff4508 33.33%, #f80a0a 50%, #ec000e 66.67%, #e20015 83.33%, 
+  #db001d 100%);
   border: 8px solid rgba(255, 255, 255, 0.1);
   border-color: var(--app-dark-bg);
 }
