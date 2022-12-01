@@ -1,49 +1,192 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="author" content="Roberto Aguirre"/>
-        <meta name="description" content="Grid with HTML, CSS and JS"/>
-        <meta name="keywords" content="HTML, CSS, SEO, web, web development"/>
-        <link rel="shortcut icon" href="assets/img/webicon.png" type="image/x-icon"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
-	  integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" 
-        referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="assets/style/index.css" media="all"/>  
-        <script src="assets/script/index.js" type="module"></script>
-        <title>Fast Keyboard</title>
-    </head>
-        <main>
-            <body>
-                <div class="container">
-                    <div class="title"><h1>FastKeyboard</h1></div>
-                        <div class="showwords">
-                            <div><p>Muestralas palabra aleatoria </p></div>
-                        </div>
-                        <div class="blackboard">
-                            <div class="score">
-                                <div class="titlecore">Score</div>
-                                <div class="Pointinscore">35</div>
-                            </div>
-                            <div class="typeword">
-                                <input class="inputypeword" type="text" placeholder="Type your word">
-                            </div>
-                            <div class="timer">
-                                <div class="titletimer">Timer</div>
-                                <div class="Timeremainder">62</div>
-                            </div>
-                        </div>
-                        <div class="button">
-                            <div class="buttonplay">
-                                <button>Start Game</button>
-                            </div>                            
-                        </div>                 
-                </div>
-            </body>
-        </main>
-</html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Roberto Aguirre" />
+    <meta name="description" content="Grid with HTML, CSS and JS" />
+    <meta name="keywords" content="HTML, CSS, SEO, web, web development" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/webicon.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/style/index.css" media="all" />
+    <script src="assets/script/index.js" type="module"></script>
+    <title>Fast Keyboard</title>
+  </head>
+  <main>
+    <body>
+      <div class="container">
+        <div class="title"><h1>FastKeyboard</h1></div>
+        <div class="show-words">
+          <div><p id="showWords">Muestralas palabra aleatoria</p></div>
+        </div>
+        <div class="blackboard">
+          <div class="score">
+            <div class="titlecore">Score</div>
+            <div class="Pointinscore">35</div>
+          </div>
+          <div class="typeword">
+            <input
+                id="inputypeword"  
+            class="inputype-word"
+              type="text"
+              placeholder="Type your word"
+            />
+          </div>
+          <div class="timer">
+            <div class="titletimer">Timer</div>
+            <div id="Timeremainder" class="Timeremainder">62</div>
+          </div>
+        </div>
+        <div class="button">
+          <div class="buttonplay">
+            <button id="buttonstart">Start Game</button>
+          </div>
+        </div>
+      </div>
+    </body>
 
+    <script>
+      const keys = [
+        "dinosaur",
+        "love",
+        "pineapple",
+        "calendar",
+        "robot",
+        "building",
+        "population",
+        "weather",
+        "bottle",
+        "history",
+        "dream",
+        "character",
+        "money",
+        "absolute",
+        "discipline",
+        "machine",
+        "accurate",
+        "connection",
+        "rainbow",
+        "bicycle",
+        "eclipse",
+        "calculator",
+        "trouble",
+        "watermelon",
+        "developer",
+        "philosophy",
+        "database",
+        "periodic",
+        "capitalism",
+        "abominable",
+        "component",
+        "future",
+        "pasta",
+        "microwave",
+        "jungle",
+        "wallet",
+        "canada",
+        "coffee",
+        "beauty",
+        "agency",
+        "chocolate",
+        "eleven",
+        "technology",
+        "alphabet",
+        "knowledge",
+        "magician",
+        "professor",
+        "triangle",
+        "earthquake",
+        "baseball",
+        "beyond",
+        "evolution",
+        "banana",
+        "perfumer",
+        "computer",
+        "management",
+        "discovery",
+        "ambition",
+        "music",
+        "eagle",
+        "crown",
+        "chess",
+        "laptop",
+        "bedroom",
+        "delivery",
+        "enemy",
+        "button",
+        "superman",
+        "library",
+        "unboxing",
+        "bookstore",
+        "language",
+        "homework",
+        "fantastic",
+        "economy",
+        "interview",
+        "awesome",
+        "challenge",
+        "science",
+        "mystery",
+        "famous",
+        "league",
+        "memory",
+        "leather",
+        "planet",
+        "software",
+        "update",
+        "yellow",
+        "keyboard",
+        "window",
+      ];
+
+    document.getElementById("inputypeword").addEventListener("keyup",comparewords);
+
+    function comparewords(){
+        let currentword = document.getElementById("showWords").textContent;
+        console.log(currentword);
+        let typegamer = document.getElementById("inputypeword").value;
+        console.log(" type Gamer " + typegamer);
+        if (currentword == typegamer ) {
+            console.log(" Palabra Igual ");
+        } else{
+            console.log(" Sigue Intentando ");
+        }
+
+
+    }
+
+
+      function randomizewords() {
+        let originalLen = keys.length;
+
+        const obj = {};
+
+        for (let i = 0; i < originalLen; i++) {
+          let k = Math.floor(Math.random() * keys.length);
+          //console.log(k + " Palabras Aletorias: " + keys[k]);
+          document.getElementById("showWords").innerHTML = keys[k];
+        }
+        console.log(obj);
+      }
+
+      randomizewords();
+
+    </script>
+  </main>
+</html>
