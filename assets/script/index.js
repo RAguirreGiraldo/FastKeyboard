@@ -62,15 +62,19 @@ function stoptimer() {
     
     localStorage.setItem('scores', JSON.stringify(highScoresLocalStorage));
     
-    highScoresLocalStorage.forEach((score, index) => {
-    let tr = document.createElement("tr").className("");
+    /*
+    highScoresLocalStorage.forEach(function (score) {
+        let tr = document.createElement("tr").className("");
         scoreRow.appendChild(tr);
 
-        document.getElementById("tdate").innerHTML=score.date;
-        document.getElementById("tname").innerHTML=score.person;
-        document.getElementById("thits").innerHTML=score.hits;
-        document.getElementById("percent").innerHTML=score.percent;
-    });
+        document.getElementById("tdate").innerHTML = score.date;
+        document.getElementById("thits").innerHTML = score.hits;
+        document.getElementById("tname").innerHTML = score.person;
+        document.getElementById("percent").innerHTML = score.percent;
+    }); 
+
+    */
+    
 
     media.pause();
 
