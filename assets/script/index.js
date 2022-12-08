@@ -13,7 +13,7 @@ function startgame() {
     document.getElementById("inputypeword").disabled=false;
     document.getElementById("inputypeword").focus();
     document.getElementById("inputypeword").value="";
-    seconds = 99;
+    seconds = 20;
     score = 0;
     document.getElementById("pointscore").innerHTML=score;    
     document.getElementById("timeremainder").innerHTML = seconds;
@@ -23,7 +23,7 @@ function startgame() {
 
 // logical to decrement time
 
-let seconds = 99; //I need to check, why how some weird behaivor
+let seconds = 20; //I need to check, why how some weird behaivor
 let timer = '';
 
 function decrementTimer() {
