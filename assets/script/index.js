@@ -41,9 +41,7 @@ function stoptimer() {
     clearInterval(timer); //stop timer
     document.getElementById("inputypeword").disabled=true;
     let newDategame = new Date().toString().substring(0,15);
-
     let puntaje = new Score(newDategame, score, userName);
-
     let scoreRow = document.getElementById("tmprow");
     let cloneRow = scoreRow.cloneNode(true);
     let percent = ((puntaje.hits/keys.length)*100).toString().substring(0,3) + " % "; 
@@ -62,10 +60,10 @@ function stoptimer() {
         highScoresLocalStorage = highScoresLocalStorage.slice(0,9);
     }
     
-    localStorage.setItem('score', JSON.stringify(highScoresLocalStorage));
+    localStorage.setItem('scores', JSON.stringify(highScoresLocalStorage));
     
     highScoresLocalStorage.forEach((score, index) => {
-        let tr = document.createElement("tr").className("");
+    let tr = document.createElement("tr").className("");
         scoreRow.appendChild(tr);
 
         document.getElementById("tdate").innerHTML=score.date;
@@ -73,7 +71,7 @@ function stoptimer() {
         document.getElementById("thits").innerHTML=score.hits;
         document.getElementById("percent").innerHTML=score.percent;
     });
-    
+
     media.pause();
 
 } 
