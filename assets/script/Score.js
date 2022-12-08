@@ -20,10 +20,3 @@ export default class Score {
     }
 }
 
-
-// Create a class named Score with 3 private properties (date, hits, percentage), 
-// 3 getters and a constructor). Score objects are created when the game ends
-
-
-// crear una clase que se llame score (check) linea3
-// con 3 propiedades privadas

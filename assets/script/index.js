@@ -5,7 +5,7 @@ import Score from "./Score.js";
 document.getElementById("buttonstart").addEventListener("click", startgame)
 let userName ="";
 let media=document.getElementById("music");
-
+// I need to add restart button.
 function startgame() {
     media.play();
     userName=prompt("Type your Name");
@@ -23,7 +23,7 @@ function startgame() {
 
 // logical to decrement time
 
-let seconds = 99;
+let seconds = 99; //I need to check, why how some weird behaivor
 let timer = '';
 
 function decrementTimer() {
@@ -45,7 +45,7 @@ function stoptimer() {
     let cloneRow = scoreRow.cloneNode(true);
     document.getElementById("inputypeword").value="";
     cloneRow.removeAttribute("hidden");
-    document.getElementById("row").prepend(cloneRow);
+    document.getElementById("row").prepend(cloneRow); //When I used prepend show me the list to new to the last player I need to improve this
     document.getElementById("tdate").innerHTML=puntaje.date;
     document.getElementById("tname").innerHTML=puntaje.person;
     document.getElementById("thits").innerHTML=puntaje.hits;

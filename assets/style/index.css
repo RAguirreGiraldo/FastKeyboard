@@ -45,6 +45,7 @@ h1 {
 
 .showtitle{
   font-family: 'Orbitron', sans-serif;
+  padding:5px;
   color: var(--app-light-bg);
   font-size: 35px;
   text-shadow: -2px -2px 1px #000;
@@ -52,6 +53,7 @@ h1 {
 
 .shownumber{
   font-family: 'Orbitron', sans-serif;
+  padding:5px;
   color: var(--app-yellow);
   font-size: 35px;
   text-shadow: -2px -2px 1px #000;
@@ -59,7 +61,7 @@ h1 {
 
 .show-words, .showUserword{
   height: 100px;
-  width: 620px;
+  width: 630px;
   font-size: 55px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -74,13 +76,12 @@ h1 {
 }
 
 input[type="text"] {
-  height: 48px;
+  height: 95px;
   padding: 15px;
   color:var(--app-light-bg);
   background-color: rgba(9, 2, 2, 0.1);
-  font-size: 17px;
-  font-weight: 400;
-  text-align: left;
+  font-size: 20px;
+  text-align: center;
   margin: 15px;
 }
 
