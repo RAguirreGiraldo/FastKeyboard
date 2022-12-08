@@ -13,7 +13,7 @@ function startgame() {
     document.getElementById("inputypeword").disabled=false;
     document.getElementById("inputypeword").focus();
     document.getElementById("inputypeword").value="";
-    seconds = 20;
+    seconds = 15;
     score = 0;
     document.getElementById("pointscore").innerHTML=score;    
     document.getElementById("timeremainder").innerHTML = seconds;
@@ -23,7 +23,7 @@ function startgame() {
 
 // logical to decrement time
 
-let seconds = 20; //I need to check, why how some weird behaivor
+let seconds = 15; //I need to check, why how some weird behaivor
 let timer = '';
 let highScoresLocalStorage =localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')):[];
 
@@ -41,13 +41,15 @@ function stoptimer() {
     clearInterval(timer); //stop timer
     document.getElementById("inputypeword").disabled=true;
     let newDategame = new Date().toString().substring(0,15);
+
     let puntaje = new Score(newDategame, score, userName);
+
     let scoreRow = document.getElementById("tmprow");
     let cloneRow = scoreRow.cloneNode(true);
+    let percent = ((puntaje.hits/keys.length)*100).toString().substring(0,3) + " % "; 
     document.getElementById("inputypeword").value="";
     cloneRow.removeAttribute("hidden");
     document.getElementById("row").prepend(cloneRow); //When I used prepend show me the list to new to the last player I need to improve this
-    
     highScoresLocalStorage.push({...puntaje , percent: percent})
     if(highScoresLocalStorage.length > 1) {
         highScoresLocalStorage = highScoresLocalStorage.sort(function(scoreA, scoreB) {
@@ -59,13 +61,21 @@ function stoptimer() {
         })
         highScoresLocalStorage = highScoresLocalStorage.slice(0,9);
     }
-    localScoreLocalStorage = highScoresLocalStorage.slice(0,9);
+    
+    localStorage.setItem('score', JSON.stringify(highScoresLocalStorage));
+    
+    highScoresLocalStorage.forEach((score, index) => {
+        let tr = document.createElement("tr").className("");
+        scoreRow.appendChild(tr);
 
-    document.getElementById("tdate").innerHTML=puntaje.date;
-    document.getElementById("tname").innerHTML=puntaje.person;
-    document.getElementById("thits").innerHTML=puntaje.hits;
-    document.getElementById("percent").innerHTML=((puntaje.hits/keys.length)*100).toString().substring(0,3) + " % "; 
+        document.getElementById("tdate").innerHTML=score.date;
+        document.getElementById("tname").innerHTML=score.person;
+        document.getElementById("thits").innerHTML=score.hits;
+        document.getElementById("percent").innerHTML=score.percent;
+    });
+    
     media.pause();
+
 } 
 
 const keys = [ 'dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',
