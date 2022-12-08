@@ -8,7 +8,7 @@ let media=document.getElementById("music");
 // I need to add restart button.
 function startgame() {
     media.play();
-    userName=prompt("Type your Name");
+    userName=prompt("Type your Name");  //cambiarlo a que sea un ventana de <dialog></dialog>
     media.play();
     document.getElementById("inputypeword").disabled=false;
     document.getElementById("inputypeword").focus();
@@ -25,6 +25,7 @@ function startgame() {
 
 let seconds = 20; //I need to check, why how some weird behaivor
 let timer = '';
+let highScoresLocalStorage =localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')):[];
 
 function decrementTimer() {
     timer = setInterval(function () {
@@ -46,6 +47,20 @@ function stoptimer() {
     document.getElementById("inputypeword").value="";
     cloneRow.removeAttribute("hidden");
     document.getElementById("row").prepend(cloneRow); //When I used prepend show me the list to new to the last player I need to improve this
+    
+    highScoresLocalStorage.push({...puntaje , percent: percent})
+    if(highScoresLocalStorage.length > 1) {
+        highScoresLocalStorage = highScoresLocalStorage.sort(function(scoreA, scoreB) {
+            if (scoreA.hits < scoreB.hits) {
+                return 1;
+            } else {
+                return -1;
+            }
+        })
+        highScoresLocalStorage = highScoresLocalStorage.slice(0,9);
+    }
+    localScoreLocalStorage = highScoresLocalStorage.slice(0,9);
+
     document.getElementById("tdate").innerHTML=puntaje.date;
     document.getElementById("tname").innerHTML=puntaje.person;
     document.getElementById("thits").innerHTML=puntaje.hits;
