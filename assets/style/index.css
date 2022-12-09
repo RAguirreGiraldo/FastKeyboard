@@ -114,3 +114,30 @@ button {
   margin: 15px;
   padding: 10px;
 }
+
+
+table { 
+  margin: 100px auto;
+  background-color: var(--app-yellow);
+  border:var(#f0f1f2);
+  border-collapse: separate;
+  width: 100%;
+  border-collapse: separate;
+}
+
+th {
+  background-color: var(--app-orange);
+  text-align: center;
+  padding: 20px;
+}
+
+
+td , th {
+  border: 0px solid #f0f1f2;
+  text-align: center;
+  padding: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: var(--app-orange);
+}

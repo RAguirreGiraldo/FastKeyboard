@@ -25,7 +25,9 @@ function startgame() {
 
 let seconds = 15; //I need to check, why how some weird behaivor
 let timer = '';
-let highScoresLocalStorage =localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')):[];
+//Create my new variable and if its to importan local storage suppor only string
+//Then  I need to convert my array in string with convertion with JSON.
+let highScoresLocalStorage =localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')):[]; 
 
 function decrementTimer() {
     timer = setInterval(function () {
@@ -42,12 +44,10 @@ function stoptimer() {
     document.getElementById("inputypeword").disabled=true;
     let newDategame = new Date().toString().substring(0,15);
     let puntaje = new Score(newDategame, score, userName);
-    let scoreRow = document.getElementById("tmprow");
-    let cloneRow = scoreRow.cloneNode(true);
+    let rowBody = document.getElementById("row");
+    rowBody.innerHTML = '';
     let percent = ((puntaje.hits/keys.length)*100).toString().substring(0,3) + " % "; 
     document.getElementById("inputypeword").value="";
-    cloneRow.removeAttribute("hidden");
-    document.getElementById("row").prepend(cloneRow); //When I used prepend show me the list to new to the last player I need to improve this
     highScoresLocalStorage.push({...puntaje , percent: percent})
     if(highScoresLocalStorage.length > 1) {
         highScoresLocalStorage = highScoresLocalStorage.sort(function(scoreA, scoreB) {
@@ -59,25 +59,17 @@ function stoptimer() {
         })
         highScoresLocalStorage = highScoresLocalStorage.slice(0,9);
     }
-    
-    localStorage.setItem('scores', JSON.stringify(highScoresLocalStorage));
-    
-    /*
-    highScoresLocalStorage.forEach(function (score) {
-        let tr = document.createElement("tr").className("");
-        scoreRow.appendChild(tr);
-
-        document.getElementById("tdate").innerHTML = score.date;
-        document.getElementById("thits").innerHTML = score.hits;
-        document.getElementById("tname").innerHTML = score.person;
-        document.getElementById("percent").innerHTML = score.percent;
-    }); 
-
-    */
-    
-
+    localStorage.setItem('scores', JSON.stringify(highScoresLocalStorage));  
+    highScoresLocalStorage.forEach((score, index) => {
+        let tr = document.createElement("tr");
+        Object.values(score).forEach((value) => {
+            let td = document.createElement("td");
+            td.innerHTML = value;
+            tr.appendChild(td);
+        })
+        rowBody.appendChild(tr);
+    });
     media.pause();
-
 } 
 
 const keys = [ 'dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population',
