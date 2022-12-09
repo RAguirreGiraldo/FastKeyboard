@@ -27,7 +27,7 @@ let seconds = 15; //I need to check, why how some weird behaivor
 let timer = '';
 //Create my new variable and if its to importan local storage suppor only string
 //Then  I need to convert my array in string with convertion with JSON.
-let highScoresLocalStorage =localStorage.getItem('score') ? JSON.parse(localStorage.getItem('score')):[]; 
+let highScoresLocalStorage =localStorage.getItem("score") ? JSON.parse(localStorage.getItem("score")):[]; 
 
 function decrementTimer() {
     timer = setInterval(function () {
